@@ -3,7 +3,7 @@ branches:
   main:
     regex: ^main$
     mode: ContinuousDeployment
-    increment: Patch
+    increment: Inherit
     is-main-branch: true
     is-release-branch: true
   feature:
@@ -54,5 +54,7 @@ branches:
       - static
       - devops
 
+tag-prefix: 'v'
+assembly-versioning-scheme: MajorMinorPatch
 ignore:
-  commits-before: "2025-02-01T00:00:00-04:00"
+  #commits-before: "2025-02-01T00:00:00-04:00"
