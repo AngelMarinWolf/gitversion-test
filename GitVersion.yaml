@@ -54,7 +54,7 @@ branches:
       - static
       - devops
 
-tag-prefix: 'v'
+tag-prefix: ''
 assembly-versioning-scheme: MajorMinorPatch
 ignore:
   #commits-before: "2025-02-01T00:00:00-04:00"
