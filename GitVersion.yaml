@@ -43,7 +43,7 @@ branches:
     source-branches:
       - main
   pull-request:
-    regex: ^pull-request
+    regex: ^(pull-requests|pull|pr)[\/-](?<Number>\d*)
     label: '{BranchName}'
     increment: Inherit
     source-branches:
