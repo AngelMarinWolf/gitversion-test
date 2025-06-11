@@ -1,0 +1,58 @@
+mode: ContinuousDeployment
+branches:
+  main:
+    regex: ^main$
+    mode: ContinuousDeployment
+    increment: Patch
+    is-main-branch: true
+    is-release-branch: true
+  feature:
+    regex: ^feature[/-](?<BranchName>.+)
+    label: '{BranchName}'
+    increment: Minor
+    source-branches:
+      - main
+  hotfix:
+    regex: ^hotfix[/-](?<BranchName>.+)
+    label: '{BranchName}'
+    increment: Patch
+    source-branches:
+      - main
+  bugfix:
+    regex: ^bugfix[/-](?<BranchName>.+)
+    label: '{BranchName}'
+    increment: Patch
+    source-branches:
+      - main
+  patch:
+    regex: ^patch[/-](?<BranchName>.+)
+    label: '{BranchName}'
+    increment: Patch
+    source-branches:
+      - main
+  devops:
+    regex: ^devops[/-](?<BranchName>.+)
+    label: '{BranchName}'
+    increment: None
+    source-branches:
+      - main
+  static:
+    regex: ^static$
+    label: '{BranchName}'
+    increment: Major 
+    source-branches:
+      - main
+  pull-request:
+    regex: ^pull-request
+    label: '{BranchName}'
+    increment: Inherit
+    source-branches:
+      - feature
+      - hotfix
+      - bugfix
+      - patch
+      - static
+      - devops
+
+ignore:
+  commits-before: "2025-02-01T00:00:00-04:00"
