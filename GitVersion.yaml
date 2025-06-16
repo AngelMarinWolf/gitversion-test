@@ -17,6 +17,14 @@ branches:
     tracks-release-branches: false
     source-branches: 
     - main
+  hotfix:
+    mode: ContinuousDelivery
+    regex: ^hotfix[/-](?<BranchName>.+)
+    increment: Patch
+    track-merge-target: false
+    tracks-release-branches: false
+    source-branches: 
+    - main
 tag-prefix: ''
 major-version-bump-message: '.*BREAKING CHANGE.*'
 #minor-version-bump-message: '.*feat(ure)?(\([^\)]+\))?:.*'
