@@ -5,6 +5,7 @@ branches:
   main:
     regex: ^(master|main)$
     source-branches: []
+    increment: Patch
     track-merge-target: false
     tracks-release-branches: false
     is-main-branch: true
@@ -24,4 +25,4 @@ commit-message-incrementing: Enabled
 
 assembly-versioning-scheme: MajorMinorPatch
 ignore:
-  #commits-before: "2025-02-01T00:00:00-04:00"
+  commits-before: "2025-02-01T00:00:00-04:00"
