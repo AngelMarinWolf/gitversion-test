@@ -25,6 +25,51 @@ branches:
     tracks-release-branches: false
     source-branches: 
     - main
+  bugfix:
+    regex: ^bugfix[/-](?<BranchName>.+)
+    label: 'bug-fix-{BranchName}'
+    increment: Patch
+    track-merge-target: false
+    tracks-release-branches: false
+    source-branches:
+      - main
+  patch:
+    regex: ^patch[/-](?<BranchName>.+)
+    label: 'patch-{BranchName}'
+    increment: Patch
+    track-merge-target: false
+    tracks-release-branches: false
+    source-branches:
+      - main
+  devops:
+    regex: ^devops[/-](?<BranchName>.+)
+    label: '{BranchName}'
+    increment: None
+    track-merge-target: false
+    tracks-release-branches: false
+    source-branches:
+      - main
+  static:
+    regex: ^static$
+    label: '{BranchName}'
+    increment: Major 
+    track-merge-target: false
+    tracks-release-branches: false
+    source-branches:
+      - main
+  pull-request:
+    regex: ^(pull-requests|pull|pr)[\/-](?<Number>\d*)
+    label: '{BranchName}'
+    increment: Inherit
+    track-merge-target: false
+    tracks-release-branches: false
+    source-branches:
+      - feature
+      - hotfix
+      - bugfix
+      - patch
+      - static
+      - devops
 tag-prefix: ''
 major-version-bump-message: '.*BREAKING CHANGE.*'
 minor-version-bump-message: '.*feat(ure)?(\([^\)]+\))?:.*'
