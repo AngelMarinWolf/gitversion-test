@@ -20,7 +20,7 @@ branches:
 tag-prefix: ''
 major-version-bump-message: '.*BREAKING CHANGE.*'
 #minor-version-bump-message: '.*feat(ure)?(\([^\)]+\))?:.*'
-patch-version-bump-message: '(?!^nobump).*'
+patch-version-bump-message: '(?!^devops).*'
 no-bump-message: '.*devops(\([^\)]+\))?:.*'
 commit-message-incrementing: MergeMessageOnly
 assembly-versioning-scheme: MajorMinorPatch
