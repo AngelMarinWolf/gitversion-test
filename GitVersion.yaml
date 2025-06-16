@@ -1,60 +1,26 @@
 mode: ContinuousDeployment
+strategies:
+- Mainline
 branches:
   main:
-    regex: ^main$
-    mode: ContinuousDeployment
-    increment: Inherit
+    regex: ^(master|main)$
+    source-branches: []
+    track-merge-target: false
+    tracks-release-branches: false
     is-main-branch: true
-    is-release-branch: true
   feature:
     regex: ^feature[/-](?<BranchName>.+)
-    label: '{BranchName}'
-    increment: Minor
-    source-branches:
-      - main
-  hotfix:
-    regex: ^hotfix[/-](?<BranchName>.+)
-    label: '{BranchName}'
-    increment: Patch
-    source-branches:
-      - main
-  bugfix:
-    regex: ^bugfix[/-](?<BranchName>.+)
-    label: '{BranchName}'
-    increment: Patch
-    source-branches:
-      - main
-  patch:
-    regex: ^patch[/-](?<BranchName>.+)
-    label: '{BranchName}'
-    increment: Patch
-    source-branches:
-      - main
-  devops:
-    regex: ^devops[/-](?<BranchName>.+)
-    label: '{BranchName}'
-    increment: None
-    source-branches:
-      - main
-  static:
-    regex: ^static$
-    label: '{BranchName}'
-    increment: Major 
-    source-branches:
-      - main
-  pull-request:
-    regex: ^(pull-requests|pull|pr)[\/-](?<Number>\d*)
-    label: '{BranchName}'
-    increment: Inherit
-    source-branches:
-      - feature
-      - hotfix
-      - bugfix
-      - patch
-      - static
-      - devops
-
+    source-branches: []
+    track-merge-target: false
+    tracks-release-branches: false
 tag-prefix: ''
+major-version-bump-message: '.*BREAKING CHANGE.*'
+minor-version-bump-message: '.*feat(ure)?(\([^\)]+\))?:.*'
+patch-version-bump-message: '(?!^nobump).*'
+no-bump-message: '.*devops(\([^\)]+\))?:.*'
+commit-message-incrementing: Enabled
+
+
 assembly-versioning-scheme: MajorMinorPatch
 ignore:
   #commits-before: "2025-02-01T00:00:00-04:00"
