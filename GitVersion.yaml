@@ -18,8 +18,8 @@ branches:
     source-branches: 
     - main
   hotfix:
-    mode: ContinuousDelivery
     regex: ^hotfix[/-](?<BranchName>.+)
+    label: 'hotfix-{BranchName}'
     increment: Patch
     track-merge-target: false
     tracks-release-branches: false
@@ -27,7 +27,7 @@ branches:
     - main
 tag-prefix: ''
 major-version-bump-message: '.*BREAKING CHANGE.*'
-#minor-version-bump-message: '.*feat(ure)?(\([^\)]+\))?:.*'
+minor-version-bump-message: '.*feat(ure)?(\([^\)]+\))?:.*'
 patch-version-bump-message: '(?!^devops).*'
 no-bump-message: '.*devops(\([^\)]+\))?:.*'
 commit-message-incrementing: MergeMessageOnly
