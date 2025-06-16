@@ -10,7 +10,8 @@ branches:
     is-main-branch: true
   feature:
     regex: ^feature[/-](?<BranchName>.+)
-    source-branches: []
+    source-branches: 
+    - main
     track-merge-target: false
     tracks-release-branches: false
 tag-prefix: ''

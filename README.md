@@ -6,3 +6,4 @@ This is just a test to understand the behavior of GitVersion
 3rd change feature branch
 4th change
 5th change
+6th change
