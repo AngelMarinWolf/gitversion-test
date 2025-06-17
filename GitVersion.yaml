@@ -53,7 +53,7 @@ branches:
     source-branches:
       - main
   static:
-    regex: ^static$
+    regex: ^static[/-](?<BranchName>.+)
     label: '{BranchName}'
     increment: Major 
     track-merge-target: false
