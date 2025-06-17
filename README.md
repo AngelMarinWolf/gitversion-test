@@ -11,3 +11,4 @@ This is just a test to understand the behavior of GitVersion
 8th Change
 9th change
 10th Change
+11st change
