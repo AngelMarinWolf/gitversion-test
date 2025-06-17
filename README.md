@@ -9,3 +9,4 @@ This is just a test to understand the behavior of GitVersion
 6th change
 7th Change
 8th Change
+9th change
